@@ -25,9 +25,8 @@ void help()
 {   
     printf("\n\n\n**********************************\n");
     printf("\n\n\n        MENU DE AJUDA\n");
-    (printf("\n\n COMANDOS":))
-    printf("\n Qualquer comando UNIX shell")
-    )
+    printf("\n\n COMANDOS:");
+    printf("\n Qualquer comando UNIX shell");
 
     printf("\n\n\n***********************************\n");
 }
@@ -79,7 +78,7 @@ void execCommands(char** wordlist){
     }
     else if(pid == 0){
         if(execvp(wordlist[0], wordlist) < 0)
-        printf("\nThere is no command with that name");
+         perror("ERROR");
         exit(0);
     }
     else{
