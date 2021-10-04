@@ -43,8 +43,11 @@ void showDir() {
     getcwd(currentDir, sizeof(currentDir));
     //char* dir = strcat(user,"@");
     //dir = strcat(dir,currentDir);
-
-    printf("\n%s@%s ",getenv("USER"),currentDir);
+    printf("\033[1;35m");
+    printf("\n%s@",getenv("USER"));
+    printf("\033[1;32m");
+    printf("%s",currentDir);
+     printf("\033[0m");
     free(currentDir);
 }
 
@@ -54,7 +57,7 @@ int inputManager(char* input){
     char* temp;
     //char* dir = showDir();
    // printf("\n%s ",dir);
-    temp = readline(">>> ");
+    temp = readline("> ");
     if(strlen(temp) != 0){
         add_history(temp);
         strcpy(input, temp);
